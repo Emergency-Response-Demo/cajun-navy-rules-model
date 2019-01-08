@@ -1,4 +1,4 @@
-package rules.model;
+package com.redhat.cajun.navy.rules.model;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -8,7 +8,7 @@ public class Incident implements Serializable {
 	
 	Integer id;
 
-	Integer reportId;
+	Integer reporterId;
 	
 	String location;
 	
@@ -27,11 +27,11 @@ public class Incident implements Serializable {
 	}
 
 	public Integer getReportId() {
-		return reportId;
+		return reporterId;
 	}
 	
 	public void setReportId(Integer reportId) {
-		this.reportId = reportId;
+		this.reporterId = reportId;
 	}
 	
 	public String getLocation() {
@@ -68,7 +68,7 @@ public class Incident implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Incident [id=" + id + ", reportId=" + reportId + ", location=" + location + ", numPeople=" + numPeople
+		return "Incident [id=" + id + ", reportId=" + reporterId + ", location=" + location + ", numPeople=" + numPeople
 				+ ", medicalNeeded=" + medicalNeeded + ", reportedTime=" + reportedTime + "]";
 	}
 
@@ -80,7 +80,7 @@ public class Incident implements Serializable {
 		result = prime * result + ((location == null) ? 0 : location.hashCode());
 		result = prime * result + ((medicalNeeded == null) ? 0 : medicalNeeded.hashCode());
 		result = prime * result + ((numPeople == null) ? 0 : numPeople.hashCode());
-		result = prime * result + ((reportId == null) ? 0 : reportId.hashCode());
+		result = prime * result + ((reporterId == null) ? 0 : reporterId.hashCode());
 		result = prime * result + ((reportedTime == null) ? 0 : reportedTime.hashCode());
 		return result;
 	}
@@ -114,10 +114,10 @@ public class Incident implements Serializable {
 				return false;
 		} else if (!numPeople.equals(other.numPeople))
 			return false;
-		if (reportId == null) {
-			if (other.reportId != null)
+		if (reporterId == null) {
+			if (other.reporterId != null)
 				return false;
-		} else if (!reportId.equals(other.reportId))
+		} else if (!reporterId.equals(other.reporterId))
 			return false;
 		if (reportedTime == null) {
 			if (other.reportedTime != null)

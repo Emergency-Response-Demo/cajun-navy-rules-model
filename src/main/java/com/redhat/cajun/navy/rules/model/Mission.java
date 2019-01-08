@@ -1,4 +1,4 @@
-package rules.model;
+package com.redhat.cajun.navy.rules.model;
 
 import java.io.Serializable;
 import java.util.Date;
