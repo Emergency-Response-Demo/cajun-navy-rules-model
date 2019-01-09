@@ -1,5 +1,6 @@
 package com.redhat.cajun.navy.rules.model;
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 public class Responder implements Serializable {
 
@@ -11,7 +12,9 @@ public class Responder implements Serializable {
 	
 	private String phoneNumber;
 	
-	private String location;
+	private BigDecimal latitude;
+	
+	private BigDecimal longitude;
 	
 	private Integer boatCapacity;
 	
@@ -41,12 +44,20 @@ public class Responder implements Serializable {
 		this.phoneNumber = phoneNumber;
 	}
 
-	public String getLocation() {
-		return location;
+	public BigDecimal getLatitude() {
+		return latitude;
 	}
 
-	public void setLocation(String location) {
-		this.location = location;
+	public void setLatitude(BigDecimal latitude) {
+		this.latitude = latitude;
+	}
+
+	public BigDecimal getLongitude() {
+		return longitude;
+	}
+
+	public void setLongitude(BigDecimal longitude) {
+		this.longitude = longitude;
 	}
 
 	public Integer getBoatCapacity() {
@@ -67,8 +78,9 @@ public class Responder implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Responder [id=" + id + ", fullname=" + fullname + ", phoneNumber=" + phoneNumber + ", location="
-				+ location + ", boatCapacity=" + boatCapacity + ", hasMedical=" + hasMedical + "]";
+		return "Responder [id=" + id + ", fullname=" + fullname + ", phoneNumber=" + phoneNumber + ", latitude="
+				+ latitude + ", longitude=" + longitude + ", boatCapacity=" + boatCapacity + ", hasMedical="
+				+ hasMedical + "]";
 	}
 
 	@Override
@@ -79,7 +91,8 @@ public class Responder implements Serializable {
 		result = prime * result + ((fullname == null) ? 0 : fullname.hashCode());
 		result = prime * result + ((hasMedical == null) ? 0 : hasMedical.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + ((location == null) ? 0 : location.hashCode());
+		result = prime * result + ((latitude == null) ? 0 : latitude.hashCode());
+		result = prime * result + ((longitude == null) ? 0 : longitude.hashCode());
 		result = prime * result + ((phoneNumber == null) ? 0 : phoneNumber.hashCode());
 		return result;
 	}
@@ -113,10 +126,15 @@ public class Responder implements Serializable {
 				return false;
 		} else if (!id.equals(other.id))
 			return false;
-		if (location == null) {
-			if (other.location != null)
+		if (latitude == null) {
+			if (other.latitude != null)
 				return false;
-		} else if (!location.equals(other.location))
+		} else if (!latitude.equals(other.latitude))
+			return false;
+		if (longitude == null) {
+			if (other.longitude != null)
+				return false;
+		} else if (!longitude.equals(other.longitude))
 			return false;
 		if (phoneNumber == null) {
 			if (other.phoneNumber != null)
