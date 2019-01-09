@@ -1,7 +1,7 @@
 package com.redhat.cajun.navy.rules.model;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.ZonedDateTime;
 
 public class Mission implements Serializable {
 
@@ -13,7 +13,7 @@ public class Mission implements Serializable {
 	
 	private Status status;
 	
-	private Date lastUpdate;
+	private ZonedDateTime lastUpdate;
 
 	public Integer getIncidentId() {
 		return incidentId;
@@ -39,15 +39,15 @@ public class Mission implements Serializable {
 		this.status = status;
 	}
 
-	public Date getLastUpdate() {
-		return lastUpdate;
-	}
+    public ZonedDateTime getLastUpdate() {
+        return lastUpdate;
+    }
 
-	public void setLastUpdate(Date lastUpdate) {
-		this.lastUpdate = lastUpdate;
-	}
+    public void setLastUpdate( ZonedDateTime lastUpdate ) {
+        this.lastUpdate = lastUpdate;
+    }
 
-	@Override
+    @Override
 	public String toString() {
 		return "Mission [incidentId=" + incidentId + ", responderId=" + responderId + ", status=" + status
 				+ ", lastUpdate=" + lastUpdate + "]";

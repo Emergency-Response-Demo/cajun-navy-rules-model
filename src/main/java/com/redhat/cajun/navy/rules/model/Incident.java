@@ -1,6 +1,6 @@
 package com.redhat.cajun.navy.rules.model;
 import java.io.Serializable;
-import java.util.Date;
+import java.time.ZonedDateTime;
 
 public class Incident implements Serializable {
 
@@ -16,7 +16,7 @@ public class Incident implements Serializable {
 	
 	private Boolean medicalNeeded;
 	
-	private Date reportedTime;
+	private ZonedDateTime reportedTime;
 
 	public Integer getId() {
 		return id;
@@ -58,15 +58,23 @@ public class Incident implements Serializable {
 		this.medicalNeeded = medicalNeeded;
 	}
 	
-	public Date getReportedTime() {
-		return reportedTime;
-	}
-	
-	public void setReportedTime(Date reportedTime) {
-		this.reportedTime = reportedTime;
-	}
+    public Integer getReporterId() {
+        return reporterId;
+    }
 
-	@Override
+    public void setReporterId( Integer reporterId ) {
+        this.reporterId = reporterId;
+    }
+
+    public ZonedDateTime getReportedTime() {
+        return reportedTime;
+    }
+
+    public void setReportedTime( ZonedDateTime reportedTime ) {
+        this.reportedTime = reportedTime;
+    }
+
+    @Override
 	public String toString() {
 		return "Incident [id=" + id + ", reportId=" + reporterId + ", location=" + location + ", numPeople=" + numPeople
 				+ ", medicalNeeded=" + medicalNeeded + ", reportedTime=" + reportedTime + "]";
