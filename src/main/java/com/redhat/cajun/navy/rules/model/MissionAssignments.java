@@ -18,6 +18,10 @@ public class MissionAssignments {
 
     private HardSoftScore score;
 
+    public Mission getMissionFor() {
+        return null;
+    }
+
     @PlanningEntityCollectionProperty
     public Collection<Incident> getIncidents() {
         return incidents;
