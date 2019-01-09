@@ -5,17 +5,17 @@ public class Responder implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
-	Integer id;
+	private Integer id;
 
-	String fullname;
+	private String fullname;
 	
-	String phoneNumber;
+	private String phoneNumber;
 	
-	String location;
+	private String location;
 	
-	Integer boatCapacity;
+	private Integer boatCapacity;
 	
-	Boolean hasMedical;
+	private Boolean hasMedical;
 
 	public Integer getId() {
 		return id;

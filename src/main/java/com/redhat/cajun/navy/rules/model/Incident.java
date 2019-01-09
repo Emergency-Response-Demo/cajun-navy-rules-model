@@ -6,18 +6,18 @@ public class Incident implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
-	Integer id;
+	private Integer id;
 
-	Integer reporterId;
+	private Integer reporterId;
 	
-	String location;
+	private String location;
 	
-	Integer numPeople;
+	private Integer numPeople;
 	
-	Boolean medicalNeeded;
+	private Boolean medicalNeeded;
 	
-	Date reportedTime;
-	
+	private Date reportedTime;
+
 	public Integer getId() {
 		return id;
 	}

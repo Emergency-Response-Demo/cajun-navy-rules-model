@@ -7,13 +7,13 @@ public class Mission implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	Integer incidentId;
+	private Integer incidentId;
 	
-	Integer responderId;
+	private Integer responderId;
 	
-	Status status;
+	private Status status;
 	
-	Date lastUpdate;
+	private Date lastUpdate;
 
 	public Integer getIncidentId() {
 		return incidentId;
