@@ -29,14 +29,6 @@ public class Incident implements Serializable {
 		this.id = id;
 	}
 
-	public Integer getReportId() {
-		return reporterId;
-	}
-	
-	public void setReportId(Integer reportId) {
-		this.reporterId = reportId;
-	}
-
 	public BigDecimal getLatitude() {
 		return latitude;
 	}
