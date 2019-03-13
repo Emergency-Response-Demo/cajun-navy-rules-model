@@ -7,7 +7,7 @@ public class Mission implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	private Integer incidentId;
+	private String incidentId;
 	
 	private Integer responderId;
 	
@@ -15,11 +15,11 @@ public class Mission implements Serializable {
 	
 	private ZonedDateTime lastUpdate;
 
-	public Integer getIncidentId() {
+	public String getIncidentId() {
 		return incidentId;
 	}
 
-	public void setIncidentId(Integer incidentId) {
+	public void setIncidentId(String incidentId) {
 		this.incidentId = incidentId;
 	}
 
