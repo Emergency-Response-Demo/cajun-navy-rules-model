@@ -1,7 +1,6 @@
 package com.redhat.cajun.navy.rules.model;
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.time.ZonedDateTime;
 
 public class Incident implements Serializable {
 
@@ -19,7 +18,7 @@ public class Incident implements Serializable {
 	
 	private Boolean medicalNeeded;
 	
-	private ZonedDateTime reportedTime;
+	private Long reportedTime;
 
 	public String getId() {
 		return id;
@@ -69,11 +68,11 @@ public class Incident implements Serializable {
         this.reporterId = reporterId;
     }
 
-    public ZonedDateTime getReportedTime() {
+    public Long getReportedTime() {
         return reportedTime;
     }
 
-    public void setReportedTime( ZonedDateTime reportedTime ) {
+    public void setReportedTime( Long reportedTime ) {
         this.reportedTime = reportedTime;
     }
 

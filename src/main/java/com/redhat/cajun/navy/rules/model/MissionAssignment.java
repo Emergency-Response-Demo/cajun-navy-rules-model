@@ -1,7 +1,6 @@
 package com.redhat.cajun.navy.rules.model;
 
 import java.io.Serializable;
-import java.time.ZonedDateTime;
 
 public class MissionAssignment implements Serializable {
 
@@ -49,7 +48,7 @@ public class MissionAssignment implements Serializable {
 		this.distance = distance;
 	}
 
-	public ZonedDateTime getReportedTime() {
+	public Long getReportedTime() {
         if ( !( incident == null ) ) {
             return this.incident.getReportedTime();
         } else {
