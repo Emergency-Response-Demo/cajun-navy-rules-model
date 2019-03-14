@@ -1,7 +1,6 @@
 package com.redhat.cajun.navy.rules.model;
 
 import java.io.Serializable;
-import java.time.ZonedDateTime;
 
 public class Mission implements Serializable {
 
@@ -9,11 +8,11 @@ public class Mission implements Serializable {
 
 	private String incidentId;
 	
-	private Integer responderId;
+	private String responderId;
 	
 	private Status status;
 	
-	private ZonedDateTime lastUpdate;
+	private Long lastUpdate;
 
 	public String getIncidentId() {
 		return incidentId;
@@ -23,11 +22,11 @@ public class Mission implements Serializable {
 		this.incidentId = incidentId;
 	}
 
-	public Integer getResponderId() {
+	public String getResponderId() {
 		return responderId;
 	}
 
-	public void setResponderId(Integer responderId) {
+	public void setResponderId(String responderId) {
 		this.responderId = responderId;
 	}
 
@@ -39,11 +38,11 @@ public class Mission implements Serializable {
 		this.status = status;
 	}
 
-    public ZonedDateTime getLastUpdate() {
+    public Long getLastUpdate() {
         return lastUpdate;
     }
 
-    public void setLastUpdate( ZonedDateTime lastUpdate ) {
+    public void setLastUpdate( Long lastUpdate ) {
         this.lastUpdate = lastUpdate;
     }
 

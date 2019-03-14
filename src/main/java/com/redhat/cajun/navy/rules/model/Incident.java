@@ -8,7 +8,7 @@ public class Incident implements Serializable {
 	
 	private String id;
 
-	private Integer reporterId;
+	private String victimId;
 	
 	private BigDecimal latitude;
 	
@@ -60,12 +60,12 @@ public class Incident implements Serializable {
 		this.medicalNeeded = medicalNeeded;
 	}
 	
-    public Integer getReporterId() {
-        return reporterId;
+    public String getReporterId() {
+        return victimId;
     }
 
-    public void setReporterId( Integer reporterId ) {
-        this.reporterId = reporterId;
+    public void setReporterId( String reporterId ) {
+        this.victimId = reporterId;
     }
 
     public Long getReportedTime() {
@@ -78,7 +78,7 @@ public class Incident implements Serializable {
 
     @Override
 	public String toString() {
-		return "Incident [id=" + id + ", reporterId=" + reporterId + ", latitude=" + latitude + ", longitude="
+		return "Incident [id=" + id + ", reporterId=" + victimId + ", latitude=" + latitude + ", longitude="
 				+ longitude + ", numPeople=" + numPeople + ", medicalNeeded=" + medicalNeeded + ", reportedTime="
 				+ reportedTime + "]";
 	}
@@ -93,7 +93,7 @@ public class Incident implements Serializable {
 		result = prime * result + ((medicalNeeded == null) ? 0 : medicalNeeded.hashCode());
 		result = prime * result + ((numPeople == null) ? 0 : numPeople.hashCode());
 		result = prime * result + ((reportedTime == null) ? 0 : reportedTime.hashCode());
-		result = prime * result + ((reporterId == null) ? 0 : reporterId.hashCode());
+		result = prime * result + ((victimId == null) ? 0 : victimId.hashCode());
 		return result;
 	}
 
@@ -136,10 +136,10 @@ public class Incident implements Serializable {
 				return false;
 		} else if (!reportedTime.equals(other.reportedTime))
 			return false;
-		if (reporterId == null) {
-			if (other.reporterId != null)
+		if (victimId == null) {
+			if (other.victimId != null)
 				return false;
-		} else if (!reporterId.equals(other.reporterId))
+		} else if (!victimId.equals(other.victimId))
 			return false;
 		return true;
 	}

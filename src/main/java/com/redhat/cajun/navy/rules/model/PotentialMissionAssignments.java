@@ -50,7 +50,7 @@ public class PotentialMissionAssignments implements Serializable {
             Mission m = new Mission();
             m.setIncidentId( assignment.getIncident().getId() );
             m.setResponderId( assignment.getResponder().getId() );
-            m.setLastUpdate( ZonedDateTime.now() );
+            m.setLastUpdate( System.currentTimeMillis() );
             m.setStatus( Status.ASSIGNED );
             return m;
         } else {
