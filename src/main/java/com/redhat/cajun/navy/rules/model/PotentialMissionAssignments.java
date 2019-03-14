@@ -52,6 +52,10 @@ public class PotentialMissionAssignments implements Serializable {
             m.setResponderId( assignment.getResponder().getId() );
             m.setLastUpdate( System.currentTimeMillis() );
             m.setStatus( Status.ASSIGNED );
+            m.setResponderStartLat(assignment.getResponder().getLatitude());
+            m.setResponderStartLong(assignment.getResponder().getLongitude());
+            m.setIncidentLat(assignment.getIncident().getLatitude());
+            m.setIncidentLong(assignment.getIncident().getLongitude());
             return m;
         } else {
             return null;
