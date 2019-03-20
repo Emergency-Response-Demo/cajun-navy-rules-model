@@ -1,7 +1,6 @@
 package com.redhat.cajun.navy.rules.model;
 
 import java.io.Serializable;
-import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Comparator;
