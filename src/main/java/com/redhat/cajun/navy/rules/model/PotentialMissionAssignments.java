@@ -39,7 +39,6 @@ public class PotentialMissionAssignments implements Serializable {
         // @michael ~ NOTE ~ using reversed() makes it so that the highest/most recent results are on the top
         this.potentialAssignments.sort( Comparator.comparing( MissionAssignment::getCompatibilityScore ).reversed()
                                           .thenComparing( Comparator.comparing( MissionAssignment::getReportedTime ).reversed() ) );
-        System.err.println( potentialAssignments.size() + "\n" );
         prioritized = true;
     }
 
