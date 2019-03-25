@@ -11,7 +11,7 @@ public class Mission implements Serializable {
 	
 	private String responderId;
 	
-	private Status status;
+	private Status status = Status.REQUESTED;
 
 	private BigDecimal responderStartLat;
 

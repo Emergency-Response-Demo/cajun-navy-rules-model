@@ -21,44 +21,41 @@ public class PotentialMissionAssignments implements Serializable {
 
     private final List<MissionAssignment> potentialAssignments = new ArrayList<>();
 
-    public PotentialMissionAssignments( Collection<MissionAssignment> potentialAssignments ) {
-        this.potentialAssignments.addAll( potentialAssignments );
+    public PotentialMissionAssignments(Collection<MissionAssignment> potentialAssignments) {
+        this.potentialAssignments.addAll(potentialAssignments);
     }
 
     public void prioritizeByReportedTime() {
-        this.potentialAssignments.sort( Comparator.comparing( MissionAssignment::getReportedTime ) );
+        this.potentialAssignments.sort(Comparator.comparing(MissionAssignment::getReportedTime));
         prioritized = true;
     }
 
     public void prioritizeByCompatibility() {
-        this.potentialAssignments.sort( Comparator.comparing( MissionAssignment::getCompatibilityScore ) );
+        this.potentialAssignments.sort(Comparator.comparing(MissionAssignment::getCompatibilityScore));
         prioritized = true;
     }
 
     public void defaultPrioritization() {
         // @michael ~ NOTE ~ using reversed() makes it so that the highest/most recent results are on the top
-        this.potentialAssignments.sort( Comparator.comparing( MissionAssignment::getCompatibilityScore ).reversed()
-                                          .thenComparing( Comparator.comparing( MissionAssignment::getReportedTime ).reversed() ) );
+        this.potentialAssignments.sort(Comparator.comparing(MissionAssignment::getCompatibilityScore).reversed()
+                .thenComparing(Comparator.comparing(MissionAssignment::getReportedTime).reversed()));
         prioritized = true;
     }
 
-    public Mission getAssignedMission() {
-        if ( potentialAssignments.size() > 0 ) {
-            MissionAssignment assignment = potentialAssignments.get( 0 );
-            Mission m = new Mission();
-            m.setIncidentId( assignment.getIncident().getId() );
-            m.setResponderId( assignment.getResponder().getId() );
-            m.setLastUpdate( System.currentTimeMillis() );
-            m.setStatus( Status.ASSIGNED );
+    public void getAssignedMission(Mission m) {
+        if (potentialAssignments.size() > 0) {
+            MissionAssignment assignment = potentialAssignments.get(0);
+            m.setIncidentId(assignment.getIncident().getId());
+            m.setResponderId(assignment.getResponder().getId());
+            m.setLastUpdate(System.currentTimeMillis());
+            m.setStatus(Status.ASSIGNED);
             m.setResponderStartLat(assignment.getResponder().getLatitude());
             m.setResponderStartLong(assignment.getResponder().getLongitude());
             m.setIncidentLat(assignment.getIncident().getLatitude());
             m.setIncidentLong(assignment.getIncident().getLongitude());
-            return m;
         } else {
-            return null;
+            m.setStatus(Status.UNASSIGNED);
         }
-
     }
 
     public boolean isPrioritized() {
