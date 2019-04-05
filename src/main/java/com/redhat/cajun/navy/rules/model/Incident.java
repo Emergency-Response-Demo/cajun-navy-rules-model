@@ -20,6 +20,8 @@ public class Incident implements Serializable {
 	
 	private Long reportedTime;
 
+	private String status;
+
 	public String getId() {
 		return id;
 	}
@@ -76,7 +78,15 @@ public class Incident implements Serializable {
         this.reportedTime = reportedTime;
     }
 
-    @Override
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	@Override
 	public String toString() {
 		return "Incident [id=" + id + ", reporterId=" + victimId + ", latitude=" + latitude + ", longitude="
 				+ longitude + ", numPeople=" + numPeople + ", medicalNeeded=" + medicalNeeded + ", reportedTime="
@@ -94,6 +104,7 @@ public class Incident implements Serializable {
 		result = prime * result + ((numPeople == null) ? 0 : numPeople.hashCode());
 		result = prime * result + ((reportedTime == null) ? 0 : reportedTime.hashCode());
 		result = prime * result + ((victimId == null) ? 0 : victimId.hashCode());
+		result = prime * result + ((status == null) ? 0 : status.hashCode());
 		return result;
 	}
 
@@ -140,6 +151,11 @@ public class Incident implements Serializable {
 			if (other.victimId != null)
 				return false;
 		} else if (!victimId.equals(other.victimId))
+			return false;
+		if (status == null) {
+			if (other.status != null)
+				return false;
+		} else if (!status.equals(other.status))
 			return false;
 		return true;
 	}
