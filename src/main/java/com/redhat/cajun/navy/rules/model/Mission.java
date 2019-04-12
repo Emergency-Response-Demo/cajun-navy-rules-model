@@ -109,8 +109,10 @@ public class Mission implements Serializable {
 
     @Override
 	public String toString() {
-		return "Mission [incidentId=" + incidentId + ", responderId=" + responderId + ", status=" + status
-				+ ", lastUpdate=" + lastUpdate + "]";
+		return "Mission [incidentId=" + incidentId + ", responderId=" + responderId + ", incidentLat=" + incidentLat
+				+ ", incidentLong=" + incidentLong +  ", responderLat=" + responderStartLat
+				+ ", responderLong=" + responderStartLong + ", destinationLat=" + destinationLat
+				+ ", destinationLong=" + destinationLong + ", status=" + status + "]";
 	}
 
 	@Override
