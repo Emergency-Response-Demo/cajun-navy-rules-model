@@ -27,6 +27,6 @@ public class Responders implements Serializable {
 	
 	@Override
 	public String toString() {
-		return "Responders [responders=" + responders + "]";
+		return "Responders [" + responders.size() + "]";
 	}
 }
