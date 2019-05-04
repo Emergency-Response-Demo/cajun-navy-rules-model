@@ -14,6 +14,8 @@ public class IncidentPriority implements Serializable {
 
     private BigDecimal averagePriority;
 
+    private BigDecimal incidents;
+
     public String getIncidentId() {
         return incidentId;
     }
@@ -38,6 +40,14 @@ public class IncidentPriority implements Serializable {
         this.averagePriority = averagePriority;
     }
 
+    public BigDecimal getIncidents() {
+        return incidents;
+    }
+
+    public void setIncidents(BigDecimal incidents) {
+        this.incidents = incidents;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -47,6 +57,7 @@ public class IncidentPriority implements Serializable {
 
         if (!Objects.equals(incidentId, that.incidentId)) return false;
         if (!Objects.equals(priority, that.priority)) return false;
+        if (!Objects.equals(incidents, that.incidents)) return false;
         return Objects.equals(averagePriority, that.averagePriority);
 
     }
@@ -55,6 +66,7 @@ public class IncidentPriority implements Serializable {
     public int hashCode() {
         int result = incidentId != null ? incidentId.hashCode() : 0;
         result = 31 * result + (priority != null ? priority.hashCode() : 0);
+        result = 31 * result + (incidents != null ? incidents.hashCode() : 0);
         result = 31 * result + (averagePriority != null ? averagePriority.hashCode() : 0);
         return result;
     }
@@ -62,9 +74,10 @@ public class IncidentPriority implements Serializable {
     @Override
     public String toString() {
         return "IncidentPriority[" +
-                "incidentId='" + incidentId + '\'' +
+                "incidentId='" + incidentId + "'" +
                 ", priority=" + priority +
                 ", averagePriority=" + averagePriority +
+                ", incidents=" + incidents +
                 ']';
     }
 }
