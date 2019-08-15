@@ -20,6 +20,8 @@ public class Responder implements Serializable {
 	
 	private Boolean hasMedical;
 
+	private Boolean person;
+
 	public String getId() {
 		return id;
 	}
@@ -76,11 +78,19 @@ public class Responder implements Serializable {
 		this.hasMedical = hasMedical;
 	}
 
+	public Boolean getPerson() {
+		return person;
+	}
+
+	public void setPerson(Boolean person) {
+		this.person = person;
+	}
+
 	@Override
 	public String toString() {
 		return "Responder [id=" + id + ", fullname=" + fullname + ", phoneNumber=" + phoneNumber + ", latitude="
 				+ latitude + ", longitude=" + longitude + ", boatCapacity=" + boatCapacity + ", hasMedical="
-				+ hasMedical + "]";
+				+ hasMedical + ", person=" + person + "]";
 	}
 
 	@Override
@@ -94,6 +104,7 @@ public class Responder implements Serializable {
 		result = prime * result + ((latitude == null) ? 0 : latitude.hashCode());
 		result = prime * result + ((longitude == null) ? 0 : longitude.hashCode());
 		result = prime * result + ((phoneNumber == null) ? 0 : phoneNumber.hashCode());
+		result = prime * result + ((person == null) ? 0 : person.hashCode());
 		return result;
 	}
 
@@ -140,6 +151,11 @@ public class Responder implements Serializable {
 			if (other.phoneNumber != null)
 				return false;
 		} else if (!phoneNumber.equals(other.phoneNumber))
+			return false;
+		if (person == null) {
+			if (other.person != null)
+				return false;
+		} else if (!person.equals(other.person))
 			return false;
 		return true;
 	}
