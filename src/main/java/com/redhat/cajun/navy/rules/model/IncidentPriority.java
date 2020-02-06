@@ -16,6 +16,10 @@ public class IncidentPriority implements Serializable {
 
     private BigDecimal incidents;
 
+    private BigDecimal escalatedIncidents;
+
+    private boolean escalated;
+
     public String getIncidentId() {
         return incidentId;
     }
@@ -46,6 +50,22 @@ public class IncidentPriority implements Serializable {
 
     public void setIncidents(BigDecimal incidents) {
         this.incidents = incidents;
+    }
+
+    public BigDecimal getEscalatedIncidents() {
+        return escalatedIncidents;
+    }
+
+    public void setEscalatedIncidents(BigDecimal escalatedIncidents) {
+        this.escalatedIncidents = escalatedIncidents;
+    }
+
+    public boolean getEscalated() {
+        return escalated;
+    }
+
+    public void setEscalated(boolean escalated) {
+        this.escalated = escalated;
     }
 
     @Override
