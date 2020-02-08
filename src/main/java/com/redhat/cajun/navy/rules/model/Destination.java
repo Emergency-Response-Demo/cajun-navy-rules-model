@@ -3,14 +3,18 @@ package com.redhat.cajun.navy.rules.model;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Destination implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     private String name;
 
+    @JsonProperty("lat")
     private BigDecimal latitude;
 
+    @JsonProperty("lon")
     private BigDecimal longitude;
 
     private Double distance;
